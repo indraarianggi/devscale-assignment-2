@@ -41,7 +41,7 @@ button.icon-btn {
 
 header {
   position: relative;
-  height: 50vh;
+  height: 65vh;
   width: 100vw;
   background-image: url("https://images.unsplash.com/photo-1649179730866-8a240ac8320c");
   background-position: center center;
@@ -53,7 +53,7 @@ header {
   position: absolute;
   width: 100%;
   z-index: 99;
-  padding: 5rem 0 0.5rem;
+  padding: 6rem 0 0.5rem;
 }
 
 #cta h1 {
