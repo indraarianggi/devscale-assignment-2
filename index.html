@@ -2,281 +2,152 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/book.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
-    <title>Book Shelf</title>
+    <title>Bookshelf</title>
   </head>
   <body>
-    <!-- <form id="form">
-      <span class="form-item">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" required />
-      </span>
-      <span class="form-item">
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author" required />
-      </span>
-      <span class="form-item">
-        <label for="genre">Genre</label>
-        <select name="genre" id="genre" required>
-          <option value="">--- Select Genre ---</option>
-          <option value="action">Action</option>
-          <option value="adventure">Adventure</option>
-          <option value="autobiography">Autobiography</option>
-          <option value="comedy">Comedy</option>
-          <option value="drama">Drama</option>
-          <option value="fiction">Fiction</option>
-          <option value="history">History</option>
-          <option value="horror">Horror</option>
-          <option value="mystery">Mystery</option>
-          <option value="nonfiction">Nonfiction</option>
-          <option value="psychology">psychology</option>
-          <option value="romance">Romance</option>
-          <option value="sci-fi">Sci-Fi</option>
-          <option value="self-help">Self-Help</option>
-        </select>
-      </span>
-      <span class="form-item">
-        <label for="review">Review</label>
-        <textarea name="review" id="review"></textarea>
-      </span>
-      <span class="form-item">
-        <label for="rating">Rating</label>
-        <input
-          type="number"
-          name="rating"
-          id="rating"
-          value="0"
-          min="0"
-          max="5"
-        />
-      </span>
-      <span class="form-item">
-        <label for="progress">Reading Progress</label>
-        <input
-          type="range"
-          name="progress"
-          id="progress"
-          value="0"
-          min="0"
-          max="100"
-          step="10"
-          oninput="progressValue.innerText = this.value"
-        />
-        <p id="progressValue">0</p>
-      </span>
-      <span class="form-item">
-        <input type="checkbox" name="completed" id="completed" />
-        <label for="completed">Completed</label>
-      </span>
-      <span class="form-item">
-        <label for="photo">Book Photo (URL)</label>
-        <input type="url" name="photo" id="photo" />
-      </span>
-      <span class="form-item">
-        <button type="submit">Submit</button>
-      </span>
-    </form> -->
-
     <header>
-      <div id="logo">
-        <p>BOOK SHELF</p>
-      </div>
       <div id="cta">
-        <h1>Lorem Ipsum Dolor Sit Amet</h1>
+        <h1>Read, Review and Share It to The World</h1>
       </div>
+      <div class="overlay"></div>
     </header>
-    <main id="app">
-      <div id="highlight">
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/SPv9Rg7.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>Creativity, Inc.</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
-          <div class="book-actions">
-            <button>Edit</button>
-            <button>Delete</button>
-            <button>Fav</button>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/nwzWCgm.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/sVNy4Ct.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <h2>All Books</h2>
-      <div id="book-list">
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/SPv9Rg7.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>1</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
+    <main id="app">
+      <div id="highlight-books"></div>
+
+      <section>
+        <div class="section-title">
+          <h2>All Books</h2>
+          <button id="btn-add">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              width="16"
+              height="16"
+              fill="currentColor"
+            >
+              <path
+                d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+              />
+            </svg>
+            Add Book
+          </button>
         </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/nwzWCgm.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
+        <div id="book-list"></div>
+      </section>
+    </main>
+
+    <!-- MODAL BOOK FORM -->
+    <div id="book-modal" class="modal hidden">
+      <div class="modal-content-wrapper">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 id="modal-title">Add Book</h2>
+            <button type="button" class="close icon-btn" id="btn-close-modal">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+                width="20"
+                height="20"
+                fill="currentColor"
+              >
+                <path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                />
+              </svg>
+            </button>
           </div>
-          <div class="book-info">
-            <h3>2</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/SPv9Rg7.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>3</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/nwzWCgm.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>4</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/SPv9Rg7.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>5</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/nwzWCgm.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>6</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/SPv9Rg7.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>7</h3>
-            <p>Author</p>
-            <p>Rating</p>
-          </div>
-        </div>
-        <div class="book-items">
-          <div class="main-book-wrap">
-            <div class="book-cover">
-              <div class="book-inside"></div>
-              <div class="book-image">
-                <img src="https://i.imgur.com/nwzWCgm.png" />
-                <div class="effect"></div>
-                <div class="light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="book-info">
-            <h3>8</h3>
-            <p>Author</p>
-            <p>Rating</p>
+          <div class="modal-body">
+            <form id="book-form">
+              <input type="text" name="id" id="book-id" hidden />
+              <span class="form-item">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required />
+              </span>
+              <span class="form-item">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" required />
+              </span>
+              <span class="form-item">
+                <label for="genre">Genre</label>
+                <select name="genre" id="genre" required>
+                  <option value="">--- Select Genre ---</option>
+                  <option value="action">Action</option>
+                  <option value="adventure">Adventure</option>
+                  <option value="autobiography">Autobiography</option>
+                  <option value="comedy">Comedy</option>
+                  <option value="drama">Drama</option>
+                  <option value="fiction">Fiction</option>
+                  <option value="history">History</option>
+                  <option value="horror">Horror</option>
+                  <option value="mystery">Mystery</option>
+                  <option value="nonfiction">Nonfiction</option>
+                  <option value="psychology">psychology</option>
+                  <option value="romance">Romance</option>
+                  <option value="sci-fi">Sci-Fi</option>
+                  <option value="self-help">Self-Help</option>
+                </select>
+              </span>
+              <span class="form-item">
+                <label for="review">Review</label>
+                <textarea name="review" id="review" rows="10"></textarea>
+              </span>
+              <span class="form-item">
+                <label for="rating">Rating</label>
+                <input
+                  type="range"
+                  name="rating"
+                  id="rating"
+                  class="rating"
+                  value="0"
+                  min="0"
+                  max="5"
+                  step="1"
+                />
+              </span>
+              <span class="form-item">
+                <label for="progress">Reading Progress</label>
+                <div class="input-progress">
+                  <input
+                    type="range"
+                    name="progress"
+                    id="progress"
+                    value="0"
+                    min="0"
+                    max="100"
+                    step="10"
+                    oninput="progressValue.innerText = this.value"
+                  />
+                  <p id="progress-value">0%</p>
+                </div>
+              </span>
+              <span class="form-item inline-form">
+                <input type="checkbox" name="completed" id="completed" />
+                <label for="completed">Completed</label>
+              </span>
+              <span class="form-item">
+                <label for="photo">Book Photo (URL)</label>
+                <input type="url" name="photo" id="photo" />
+              </span>
+              <span class="form-item inline-form">
+                <input type="checkbox" name="highlight" id="highlight" />
+                <label for="highlight">Highlight</label>
+              </span>
+              <span class="form-item" id="submit-actions">
+                <button type="submit" id="btn-submit">Submit</button>
+              </span>
+              <span class="form-item hidden" id="preview-actions">
+                <button type="button" id="btn-edit">Edit</button>
+                <button type="button" id="btn-delete">Delete</button>
+              </span>
+            </form>
           </div>
         </div>
       </div>
-    </main>
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -9,6 +9,4 @@ export interface IBook {
   is_completed: number;
   photo: string;
   highlight: number;
-  createdAt: number;
-  updatedAt: number;
 }
