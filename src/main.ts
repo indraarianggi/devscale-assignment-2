@@ -239,6 +239,11 @@ function handleOpenModal() {
 function handleCloseModal() {
   selectedBook = null;
 
+  disableForm(false);
+  modalTitle.innerText = "Add Book";
+  previewActions.classList.add("hidden");
+  submitActions.classList.remove("hidden");
+
   inputBookId.value = "";
   inputTitle.value = "";
   inputAuthor.value = "";
@@ -252,7 +257,6 @@ function handleCloseModal() {
   inputPhoto.value = "";
   inputHighlight.checked = false;
 
-  disableForm(false);
   bookModal.classList.add("hidden");
 }
 
